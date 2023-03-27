@@ -20,3 +20,11 @@ JSnack Blocco 1
 
  ---
 ## OPERATIONS
+### JSnack 5
+- Creo un array vuoto.
+- con un ciclo *for* che si ripete per 6 volte:
+  - chiedo all'utente di inserire un numero
+  - trasformo il valore inserito in valore numerico
+  - attraverso l'operatore *%* controllo che sia divisibile per due, quindi pari
+  - se falso, quindi dispari, aggiungo il valore inserito al mio array
+- stampo l'array con i dati inseriti
