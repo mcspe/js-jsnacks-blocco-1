@@ -30,8 +30,15 @@ JSnack Blocco 1
 - stampo l'array con i dati inseriti
 ### JSnack 6
 - Chiedo all'utente di inserire un numero
--creo un array vuoto
+- creo un array vuoto
 - creo un ciclo *for* che si ripeta tante volte quanto il numero inserito dall'utente:
   - per ogni ciclo calcolo il cubo del valore del contatore (moltiplico il valore del contatore per se stesso due volte)
   - aggiungo il risultato ottenuto al mio array
 - stampo l'array con i dati inseriti
+### JSnack 7
+- creo una costante *base potenza* con valore `2`
+- creo una variabile *risultato* con valore `1` (la potenza di un numero alla `0` è uguale a `1`)
+- con un ciclo do while:
+  - stampo il valore di risultato
+  - assegno a *risultato* il valore di sè stesso per *base potenza*
+  - controllo che *risultato* si inferiore al valore `1000`, condizione per la quale si chiude il ciclo
