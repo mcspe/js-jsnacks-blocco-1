@@ -15,11 +15,61 @@ OPERATIONS
 - stampo l'array con i dati inseriti */
 
 const oddNum = [];
+const numberCount = [
+  'primo',
+  'secondo',
+  'terzo',
+  'quarto',
+  'quinto',
+  'sesto'
+];
 
-for (let i = 0; i < 6; i++) {
-  const number = parseInt(prompt('inserisci il numero'));
-  if (number%2){
-    oddNum.push(number);
-  }  
-}
-console.log(oddNum);
+const insertMsg = document.querySelector('.snack-container label');
+const numberInput = document.querySelector('.snack-container input');
+const inputBtn = document.querySelector('.snack-container button');
+const result = document.querySelector('.snack-container .result');
+const resultMsg = document.createElement('p');
+result.append(resultMsg);
+
+let i = 0;
+numberInput.value = '';
+
+insertMsg.innerHTML = `Inserisci il ${numberCount[i]} numero`;
+
+inputBtn.addEventListener('click', function() {
+
+  const number = parseInt(numberInput.value);
+
+  if (!isNaN(number)){
+    i++;
+    numberInput.value = '';
+    numberInput.focus();
+    insertMsg.innerHTML = `Inserisci il ${numberCount[i]} numero`;
+
+    if (number % 2) {
+      oddNum.push(number);
+    } 
+
+  } else {
+    insertMsg.innerHTML = `Il valore inserito non è numerico, per favore inserisci un numero`;
+    numberInput.value = '';
+    numberInput.focus();
+  }
+
+  if (i === 6) {
+    if (oddNum.length != 0){
+      result.innerHTML = `Fatto! I numeri dispari che hai inserito sono: ${oddNum.join(' - ')}`;
+    } else {
+      result.innerHTML = `Fatto! Non hai inserito numeri dispari`;
+    }
+    
+    oddNum.splice(0);
+    i = 0;
+    numberInput.value = '';
+    numberInput.blur();
+    insertMsg.innerHTML = `Inserisci il ${numberCount[i]} numero`;
+  }
+});
+
+
+

@@ -8,29 +8,51 @@ OPERATIONS
 - con un ciclo for per la lunghezza dell'array sommo gli elementi dell'array
 - visualizzo il risultato */
 
-let num = prompt('inserisci un numero di 4 cifre');
+const insertMsg = document.querySelector('.snack-container label');
+const numberInput = document.querySelector('.snack-container input');
+const inputBtn = document.querySelector('.snack-container button');
+const result = document.querySelector('.snack-container .result');
+const resultMsg = document.createElement('p');
+result.append(resultMsg);
+
+let num;
 let checkNum;
 let checked = false;
-let result = 0;
+let sumResult = 0;
 
-while (!(checked)){
+numberInput.value = '';
 
+insertMsg.innerHTML = `Inserisci un numero di quattro cifre`;
+
+inputBtn.addEventListener('click', function() {
+
+  num = numberInput.value;
   checkNum = parseInt(num);
-
-  if ((num.length === 4) && !(isNaN(checkNum))){
-    checked = true;
-  }else{
-    num = prompt('Il numero inserito non rispetta i parametri richiesti, per favore inserisci un numero di 4 cifre');
-  }
+  console.log(num, checkNum);
   
-}
+  if ((num.length === 4) && !(isNaN(checkNum))){
+    insertMsg.innerHTML = `Inserisci un numero di quattro cifre`;
+    checked = true;
+    numberInput.value = '';
 
-const arr = num.split('');
+    const arr = num.split('');
 
-for(let i = 0; i < arr.length; i++){
-  const add = parseInt(arr[i]);
-  console.log(add);
-  result += add;
-}
+    for(let i = 0; i < arr.length; i++){
+      const add = parseInt(arr[i]);
+      console.log(add);
+      sumResult += add;
+    }
 
-console.log('la somma delle cifre del numero inserito', num, 'è uguale a', result);
+    result.innerHTML = `La somma delle cifre del numero inserito ${num} è uguale a ${sumResult}`;
+
+  } else {
+
+    insertMsg.innerHTML = 'Il numero inserito non rispetta i parametri richiesti, per favore inserisci un numero di 4 cifre';
+    numberInput.focus();
+
+    result.innerHTML = '';
+
+  }
+    
+
+});

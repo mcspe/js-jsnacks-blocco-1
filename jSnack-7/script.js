@@ -10,13 +10,44 @@ OPERATIONS
   - assegno a *risultato* il valore di sè stesso per *base potenza*
   - controllo che *risultato* si inferiore al valore `1000`, condizione per la quale si chiude il ciclo
 */
+const inputBtn = document.querySelector('.snack-container button');
+const result = document.querySelector('.snack-container .result');
+const resultMsg = document.createElement('p');
+result.append(resultMsg);
+const resultMsgTitle = document.createElement('h3');
+resultMsg.append(resultMsgTitle);
+const resultMsgList = document.createElement('ul');
+resultMsg.append(resultMsgList);
 
-const basePotenza = 2;
-let result = 1;
-let elevatore = 0;
+let printed = false;
 
-do{
-  console.log(basePotenza, 'alla', elevatore, 'uguale a', result);
-  elevatore++;
-  result *= basePotenza;
-}while(result <= 1000)
+inputBtn.addEventListener('click', function() {
+  
+  resultMsgList.innerHTML = '';
+  const powerBase = 2;
+  let powerResult = 1;
+  let nthPower = 0;
+
+
+  if (!printed) {
+
+    do{
+      const resultMsgListItem = document.createElement('li');
+      resultMsgListItem.innerHTML = `${powerBase} alla ${nthPower} uguale a ${powerResult}`;
+      resultMsgList.append(resultMsgListItem);
+  
+      nthPower++;
+      powerResult *= powerBase;
+  
+    }while(powerResult <= 1000)
+
+    inputBtn.innerHTML = 'Cancella';
+    printed = !printed;
+
+  } else {
+    printed = !printed;
+    inputBtn.innerHTML = 'Stampa';
+    resultMsgList.innerHTML = '';
+  }
+
+});
