@@ -42,3 +42,9 @@ JSnack Blocco 1
   - stampo il valore di risultato
   - assegno a *risultato* il valore di sè stesso per *base potenza*
   - controllo che *risultato* si inferiore al valore `1000`, condizione per la quale si chiude il ciclo
+### JSnack 8
+- chiedi all'utente di inserire un numero di 4 cifre
+- controlla che il dato inserito rispetti i parametri richiesti, altrimenti chiedi di inserire un dato corretto
+- tramite *split* creo un'array dalla stringa di numeri inserita dall'utente
+- con un ciclo for per la lunghezza dell'array sommo gli elementi dell'array
+- visualizzo il risultato
