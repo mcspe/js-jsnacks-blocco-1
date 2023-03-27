@@ -28,3 +28,10 @@ JSnack Blocco 1
   - attraverso l'operatore *%* controllo che sia divisibile per due, quindi pari
   - se falso, quindi dispari, aggiungo il valore inserito al mio array
 - stampo l'array con i dati inseriti
+### JSnack 6
+- Chiedo all'utente di inserire un numero
+-creo un array vuoto
+- creo un ciclo *for* che si ripeta tante volte quanto il numero inserito dall'utente:
+  - per ogni ciclo calcolo il cubo del valore del contatore (moltiplico il valore del contatore per se stesso due volte)
+  - aggiungo il risultato ottenuto al mio array
+- stampo l'array con i dati inseriti
